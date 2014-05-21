@@ -17,14 +17,14 @@ until you leave the main directory (so within any sub-folders the environment st
 If you leave the base folder the environment gets disabled and a message is shown to you.
 
 Example:
-╭irrenhaus > ~
+```╭irrenhaus > ~
 ╰> cd envtest 
 Found virtualenv. Activating...
 ╭irrenhaus > ~/envtest [test]
 ╰> cd ..
 Deactivating virtualenv: /home/irrenhaus/envtest/test
 ╭irrenhaus > ~
-╰> 
+╰> ```
 
 Notice how the environment's name is displayed within the prompt. You can do that by using the supplied current_virtual_env() method which
 returns a string like "[name]".
@@ -38,7 +38,7 @@ subdirectories, so as soon as you change to _any_ different folder the PATH vari
 This enables you to have per-directory custom PATH entries.
 
 Example:
-╭irrenhaus > ~
+```╭irrenhaus > ~
 ╰> cd pathtest 
 Adding virtualpath /home/irrenhaus/bin to the PATH variable.
 ╭irrenhaus > ~/pathtest
@@ -46,7 +46,7 @@ Adding virtualpath /home/irrenhaus/bin to the PATH variable.
 /home/irrenhaus/bin
 ╭irrenhaus > ~/pathtest
 ╰> cd ..
-Resetting PATH variable
+Resetting PATH variable```
 
 themes/irrenhaus-dual
 ---------------------
