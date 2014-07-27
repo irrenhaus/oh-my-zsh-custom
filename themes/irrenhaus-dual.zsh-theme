@@ -1,5 +1,6 @@
 # Tip with ${PWD/#$HOME/~} is from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 
+# For this you need to have the dotfiles color_definitions.zsh file loaded
 define_colors
 
 #####################
@@ -152,7 +153,11 @@ git_super_status() {
 userinfo() {
     local user="$(echo "%{$bldgrn%}%n%{$txtrst%}")"
     local curdir="$(echo "%{$bldblu%}${PWD/#$HOME/~}%{$txtrst%}")"
-    printf "%s > %s" "$user" "$curdir"
+    local on_host=""
+    if [ -n "$SSH_CONNECTION" ]; then
+        on_host="@$SHORT_HOST"
+    fi
+    printf "%s%s > %s" "$user" "$on_host" "$curdir"
 }
 
 autoload -U current_virtual_env
